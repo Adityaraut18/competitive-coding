@@ -1,0 +1,21 @@
+T=int(input())
+while (T>0):
+    c1,c0,c2=0,0,1
+    A=list(map(int,input().split(" ")))
+    A.append(0)
+    A.append(1)
+    for i in range(len(A)):
+        if A[i]==1:
+            c1+=1
+            if c2==c0:
+                print("LOSE")
+                break
+        else:
+            if c1%2==1:
+                c2=c0
+                c0=1
+            else:
+                c2=c0
+                c0=0
+    print("WIN",A)
+    T-=1
